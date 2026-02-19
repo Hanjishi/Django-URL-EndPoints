@@ -1,5 +1,10 @@
 from django.http import HttpResponse
 from .models import TextRecord
+from django.shortcuts import render
+
+def home(request):
+    return render(request, "home.html")
+
 
 def add(request):
     text = request.GET.get("text", "").strip()
